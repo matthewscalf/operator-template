@@ -102,5 +102,9 @@
         </div>
     </div>
 
-		{% include 'operator.' ~ template ~ '.ticket.forms.message_submit' with {'submit_name': Lang.get('ticket.post_reply')} %}
+		{% if note %}
+			{% include 'operator.' ~ template ~ '.ticket.forms.message_submit' with {'submit_name': Lang.get('ticket.post_note')} %}
+		{% else %}
+			{% include 'operator.' ~ template ~ '.ticket.forms.message_submit' with {'submit_name': Lang.get('ticket.post_reply')} %}
+		{% endif %}
 </div>

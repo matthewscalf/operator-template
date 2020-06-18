@@ -121,8 +121,6 @@
 
             {% include 'operator.' ~ template ~ '.ticket.forms.message_reply_options' with { 'note': true } %}
         </div>
-
-        {% include 'operator.' ~ template ~ '.ticket.forms.message_submit' with {'submit_name': Lang.get('ticket.post_note')} %}
     </form>
 
     <form class="ticket-reply-form forward-form validate sp-hidden {% if auth_user().isAscendingReplyOrder() == 'ASC' %}sp-mt-6{% else %}sp-mb-6{% endif %}">
